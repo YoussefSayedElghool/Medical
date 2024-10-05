@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+        </style>
+
+    <link rel="stylesheet" href="static/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/site.css" />
+    
+    <script src="static/js/site.js"></script>
+    <script src="static/lib/jquery/jquery.min.js"></script>
+    <script src="static/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="static/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+
+<link rel="stylesheet" href="static/css/_HeaderPartial.css" />
+
+<header class="header">
+   <nav class="nav">
+
+
+       <div class="div-container">
+            <h1 class="Brand-name">Medical.Com</h1>
+       </div>
+
+        <ul class="my-navbar-nav d-none d-sm-flex">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link text-dark" href="/Home/Booking">Search</a>
+                </li>
+            </ul>
+
+
+        <div class="imges-container">
+             <a class="nav-link text-dark" href="/">
+            <img src="static/Images/search_icon.png" class="search-icon" />
+            </a>
+        </div>
+
+   </nav>
+</header>
+
+
+    <main role="main" class="home-container">
+        
+
+
+    <br />
+
+    <link href="static/css/glide.core.min.css" rel="stylesheet" />
+<link href="static/css/glide.theme.min.css" rel="stylesheet" />
+<script src="static/js/glide.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .glide__slide img {
+        width: 100%;
+        height: 500px;
+        transition: all 2s, height 2s, transform 2s;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+</style>
+<div class="glide">
+    <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides" id="slider">
+            <!-- Slides will be injected here -->
+        </ul>
+    </div>
+
+    <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+    </div>
+</div>
+
+<script>
+   function fetchSliders(data) {
+            
+                    const slidesContainer = $('#slider');
+
+                    let sliders = ["https://www.curianmedical.co.uk/wp-content/uploads/2021/10/medical-bg-1536x579.jpg" , "https://health.punjab.gov.pk/img/slider/18.jpg" , "https://gocodes.com/wp-content/uploads/2021/09/Gocodes-medical-equipment-list-1.png.webp"];
+                    for (let index = 0; index < sliders.length; index++) {
+                       let  slide = sliders[index];
+                        const slideElement = $('<li>', { class: 'glide__slide' });
+                        slideElement.html(`<img src="${slide}">`);
+                        slidesContainer.append(slideElement);
+                        
+                    }
+
+                    const glide = new Glide('.glide', {
+                        type: 'carousel',
+                        autoplay: 2000, // Autoplay interval in milliseconds
+                        animationDuration: 800, // Duration of the slide animation
+                        hoverpause: true, // Pause autoplay on hover
+                    });
+
+                    glide.mount();
+                }
+            
+    fetchSliders();
+</script>
+
+    <br />
+
+    <section class="home-testimonial">
+        <div class="row d-flex justify-content-center testimonial-pos">
+            <div class="col-md-12 d-flex justify-content-center">
+                <h2>Explore the clients experience</h2>
+            </div>
+        </div>
+    <section class="home-testimonial-bottom container testimonial-inner w-100">
+            <div class="row d-flex justify-content-center w-100" id="testimonial-content">
+                        <div class="col-md-4 style-3">
+                                    <div class="tour-desc bg-white review-card">
+                                    <div class="tour-text color-grey-3 text-center">
+                                        “Amazing Service! Highly recommended.”
+                                    </div>
+                                    <div class="d-flex justify-content-center pt-2 pb-2">
+                                        <img class="tm-people" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&amp;s" alt="">
+                                    </div>
+                                    <div class="link-name d-flex justify-content-center">
+                                         Person
+                                    </div>
+                                    <div class="link-position d-flex justify-content-center">
+                                        Doctor
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-4 style-3">
+                                    <div class="tour-desc bg-white review-card">
+                                    <div class="tour-text color-grey-3 text-center">
+                                        “Good value for money. Satisfied with the purchase.”
+                                    </div>
+                                    <div class="d-flex justify-content-center pt-2 pb-2">
+                                        <img class="tm-people" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&amp;s" alt="">
+                                    </div>
+                                    <div class="link-name d-flex justify-content-center">
+                                         Person
+                                    </div>
+                                    <div class="link-position d-flex justify-content-center">
+                                        Doctor
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-4 style-3">
+                                    <div class="tour-desc bg-white review-card">
+                                    <div class="tour-text color-grey-3 text-center">
+                                        “The Service quality is decent, but the delivery was delayed.”
+                                    </div>
+                                    <div class="d-flex justify-content-center pt-2 pb-2">
+                                        <img class="tm-people" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&amp;s" alt="">
+                                    </div>
+                                    <div class="link-name d-flex justify-content-center">
+                                         Person
+                                    </div>
+                                    <div class="link-position d-flex justify-content-center">
+                                        Doctor
+                                    </div>
+                                </div>
+                        </div></div>
+        </section>
+
+    
+    
+    </section>
+
+
+    <br />
+    <link rel="stylesheet" href="static/css/FooterPartial.css" />
+
+<div class="footer">
+    <div class="footer-container">
+    <h1 class="follow-label">follow us at</h1>
+        <div>
+            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&s">
+                <img src="static/Images/LinkedIn.png" />
+            </a>
+            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&s">
+            <img src="static/Images/facebook.png" />
+            </a>
+            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&s">
+            <img src="static/Images/insta.png" />
+            </a>
+        </div>
+
+        <h6 style="width: 188px;width: 188px;text-align: center;">
+            Copyright© 2024 Medical.Com . All right reserved
+        </h6>
+    </div>
+</div>
+
+
+
+
+
+
+    </main>
+
+
+    
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="9408609b3e6e4fc589ac2b992ce81056" data-requestMappingFromServer="false" data-connectUrl="http://localhost:56785/7f12d16f6ae94ffd9eaa6f6a41278b54/browserLink"></script>
+<!-- End Browser Link -->
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+</html>

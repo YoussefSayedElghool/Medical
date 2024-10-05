@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+    </style>
+
+    <link rel="stylesheet" href="static/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="static/css/site.css" />
+    <link rel="stylesheet" href="static/css/FooterPartial.css" />
+    <link rel="stylesheet" href="static/css/_HeaderPartial.css" />
+
+    <script src="static/js/site.js"></script>
+    <script src="static/lib/jquery/jquery.min.js"></script>
+    <script src="static/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="static/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <link href="static/css/glide.core.min.css" rel="stylesheet" />
+    <link href="static/css/glide.theme.min.css" rel="stylesheet" />
+    <script src="static/js/glide.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      .glide__slide img {
+        width: 100%;
+        height: 500px;
+        transition: all 2s, height 2s, transform 2s;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="div-container">
+          <h1 class="Brand-name">Medical.Com</h1>
+        </div>
+
+        <ul class="my-navbar-nav d-none d-sm-flex">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="/Home/Booking">Search</a>
+          </li>
+        </ul>
+
+        <div class="imges-container">
+          <a class="nav-link text-dark" href="/">
+            <img src="static/Images/search_icon.png" class="search-icon" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main" class="home-container">
+      <br />
+
+      <section class="search-form" dir="rtl" style="font-family: cairo;" dir="rtl">
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">نموذج الأعراض الصحية</h2>
+            <form id="healthForm" method="get">
+                <!-- <div class="mb-3">
+                    <label for="age" class="form-label">العمر</label>
+                    <input type="number" class="form-control" id="age" placeholder="أدخل العمر" min="0" step="1" required>
+                </div> -->
+                <div class="mb-3">
+                    <label for="ageCategory" class="form-label">فئة العمر</label>
+                    <select class="form-select" id="ageCategory">
+                        <option value="1">طفل</option>
+                        <option value="3">مراهق</option>
+                        <option value="0">بالغ</option>
+                        <option value="2">كبير</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">الجنس</label>
+                    <select class="form-select" id="gender">
+                        <option value="1">ذكر</option>
+                        <option value="0">أنثى</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="durationDays" class="form-label">مدة الأيام</label>
+                    <input type="number" class="form-control" id="durationDays" placeholder="أدخل عدد الأيام" min="0" step="1">
+                </div>
+                <!-- Symptoms -->
+                <h5 class="mt-4">الأعراض</h5>
+                <div id="symptoms-container" class="mb-3">
+                    <!-- Symptoms will be dynamically added here by JavaScript -->
+                </div>
+                
+                <button type="submit" class="btn btn-primary mt-4">إرسال</button>
+            </form>
+    
+            <div class="mt-4">
+                <h5>النتيجة</h5>
+                <pre id="submittedData" style="font-size: large;"></pre>
+            </div>
+        </div>
+    
+      </section>
+
+      <br />
+
+      <div class="footer">
+        <div class="footer-container">
+          <h1 class="follow-label">follow us at</h1>
+          <div>
+            <a
+              href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&s"
+            >
+              <img src="static/Images/LinkedIn.png" />
+            </a>
+            <a
+              href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&s"
+            >
+              <img src="static/Images/facebook.png" />
+            </a>
+            <a
+              href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCW8ayM9K_iNzX81NSjgpGcl30jDvsTSiIg&s"
+            >
+              <img src="static/Images/insta.png" />
+            </a>
+          </div>
+
+          <h6 style="width: 188px; width: 188px; text-align: center">
+            Copyright© 2024 Medical.Com . All right reserved
+          </h6>
+        </div>
+      </div>
+    </main>
+
+
+    <script>
+        // Symptoms array
+        const symptoms = [
+            'آلام البطن', 'القلق', 'الانتفاخ', 'تشوش الرؤية', 'عدم راحة في الصدر', 
+            'ألم في الصدر', 'ضيق في الصدر', 'قشعريرة', 'الارتباك', 'احتقان', 
+            'السعال', 'الاكتئاب', 'الإسهال', 'صعوبة التركيز', 'الدوار', 
+            'جفاف الجلد', 'ألم الأذن', 'ألم في الوجه', 'الإرهاق', 'الحمى', 
+            'التبول المتكرر', 'الصداع', 'العطش الزائد', 'الأرق', 'حكة في العينين',
+            'حكة الجلد', 'ألم المفاصل', 'فقدان الشهية', 'فقدان الاهتمام', 'فقدان حاسة الشم',
+            'فقدان حاسة التذوق', 'ألم العضلات', 'الغثيان', 'العصبية', 'التعرق الليلي',
+            'الطفح الجلدي', 'الاحمرار', 'سيلان الأنف', 'نوبات الصرع', 'حساسية للضوء',
+            'حساسية للصوت', 'ضيق التنفس', 'العطس', 'التهاب الحلق', 'التعرق', 
+            'التورم', 'الارتجاف', 'القيء', 'زيادة الوزن', 'فقدان الوزن', 'الصفير'
+        ];
+
+        // Function to add symptoms checkboxes to the form
+        function addSymptoms() {
+            const container = document.getElementById('symptoms-container');
+
+            symptoms.forEach((symptom, index) => {
+                // Create a div for each checkbox
+                const div = document.createElement('div');
+                div.classList.add('form-check', 'mb-2');
+
+                // Create the checkbox
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.classList.add('form-check-input');
+                checkbox.id = `symptom${index}`;
+                checkbox.value = 0; // Default unchecked value
+
+                // Create the label
+                const label = document.createElement('label');
+                label.classList.add('form-check-label');
+                label.setAttribute('for', `symptom${index}`);
+                label.textContent = symptom;
+
+                // Add event listener to change value on checkbox click
+                checkbox.addEventListener('change', function() {
+                    checkbox.value = this.checked ? 1 : 0; // Set value to 1 if checked, 0 if not
+                });
+
+                // Append the checkbox and label to the div
+                div.appendChild(checkbox);
+                div.appendChild(label);
+
+                // Append the div to the container
+                container.appendChild(div);
+            });
+        }
+
+        // // Function to handle form submission
+        // document.getElementById('healthForm').addEventListener('submit', function(event) {
+        //     event.preventDefault(); // Prevent the default form submission
+
+        //     // Collect form data
+        //     const age = document.getElementById('age').value;
+        //     const ageCategory = document.getElementById('ageCategory').value;
+        //     const gender = document.getElementById('gender').value;
+        //     const durationDays = document.getElementById('durationDays').value;
+
+        //     // Collect checkbox values
+        //     let symptomsValues = [];
+        //     symptoms.forEach((_, index) => {
+        //         const symptomCheckbox = document.getElementById(`symptom${index}`);
+        //         symptomsValues.push(symptomCheckbox.value); // 1 if checked, 0 if not
+        //     });
+
+        //     // Create the string with values separated by commas
+        //     const formData = [
+        //         age, 
+        //         ageCategory, 
+        //         gender, 
+        //         durationDays, 
+        //         ...symptomsValues
+        //     ].join(',');
+
+        //     // Display the result (you can replace this with an actual form submission or AJAX call)
+        //     document.getElementById('submittedData').textContent = formData;
+        // });
+
+        // Call the function to add the symptoms when the page loads
+        window.onload = addSymptoms;
+
+
+    </script>
+
+    <script type="text/javascript">
+        // Function to handle form submission
+document.getElementById('healthForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    // const age = document.getElementById('age').value;
+    const ageCategory = document.getElementById('ageCategory').value;
+    const gender = document.getElementById('gender').value;
+    const durationDays = document.getElementById('durationDays').value;
+
+    // Collect checkbox values
+    let symptomsValues = [];
+    symptoms.forEach((_, index) => {
+        const symptomCheckbox = document.getElementById(`symptom${index}`);
+        symptomsValues.push(symptomCheckbox.value); // 1 if checked, 0 if not
+    });
+
+    // Create the string with values separated by commas
+    const formData = [
+        // age, 
+        ageCategory, 
+        gender, 
+        durationDays, 
+        ...symptomsValues
+    ].join(',');
+
+    // Send data to the Flask endpoint
+    fetch('/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({ formData })
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('submittedData').textContent = data;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+    </script>
+
+  
+
+    <script>
+      function fetchSliders(data) {
+        const slidesContainer = $("#slider");
+
+        let sliders = [
+          "https://www.curianmedical.co.uk/wp-content/uploads/2021/10/medical-bg-1536x579.jpg",
+          "https://health.punjab.gov.pk/img/slider/18.jpg",
+          "https://gocodes.com/wp-content/uploads/2021/09/Gocodes-medical-equipment-list-1.png.webp",
+        ];
+        for (let index = 0; index < sliders.length; index++) {
+          let slide = sliders[index];
+          const slideElement = $("<li>", { class: "glide__slide" });
+          slideElement.html(`<img src="${slide}">`);
+          slidesContainer.append(slideElement);
+        }
+
+        const glide = new Glide(".glide", {
+          type: "carousel",
+          autoplay: 2000, // Autoplay interval in milliseconds
+          animationDuration: 800, // Duration of the slide animation
+          hoverpause: true, // Pause autoplay on hover
+        });
+
+        glide.mount();
+      }
+
+      fetchSliders();
+    </script>
+  </body>
+</html>

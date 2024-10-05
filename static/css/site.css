@@ -1,0 +1,159 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 0;
+    border: none;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: normal;
+    scrollbar-width: thin;
+    text-decoration:none;
+}
+html {
+   
+}
+
+body {
+    overflow:hidden;
+    height:100%
+}
+
+main {
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'grandhotel-regular';
+    src: url('../fonts/grandhotel-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'spacegrotesk';
+    src: url('../fonts/spacegrotesk-variablefont_wght.ttf') format('truetype');
+}
+a {
+    font-family: spacegrotesk;
+}
+
+a:link {
+    color: #000;
+}
+
+a:visited {
+    color: #000;
+}
+
+a:hover {
+    color: #000;
+}
+
+a:active {
+    color: #000;
+}
+
+.flex-no-top-left {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-no-normal-left {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: normal;
+}
+.my-btn {
+    text-align: center;
+    padding: 7px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-family: spacegrotesk;
+    font-weight: 400;
+    background: #023E8A;
+    color:white;
+}
+
+.home-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 94vh;
+    padding: 11px
+}
+
+.home-testimonial {
+    background-color: #023E8A;
+    height: auto;
+    padding: 0px 30px 30px 30px;
+    border-radius: 5px;
+}
+
+
+.home-testimonial-bottom {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+.home-testimonial h3 {
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase
+}
+
+.home-testimonial h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: 700
+}
+
+.testimonial-inner .tour-desc {
+    border-radius: 5px;
+    padding: 40px
+}
+
+.color-grey-3 {
+    font-family: Bahnschrift,'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: #6c83a2
+}
+
+.testimonial-inner img.tm-people {
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-width: none
+}
+
+.link-name {
+    font-family: Bahnschrift,'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: #6c83a2
+}
+
+.link-position {
+    font-family: Bahnschrift,'Times New Roman', Times, serif;
+    font-size: 12px;
+    color: #6c83a2
+}
+
+.review-card{
+    min-height: 258px;
+    height: auto;
+    margin: 10px;
+}
+
+.testimonial-pos{
+    padding: 29px;
+}
+
+
+
